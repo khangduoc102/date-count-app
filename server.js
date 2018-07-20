@@ -1,4 +1,6 @@
-const io = require('socket.io')();
+#!/usr/bin/env nodejs
+var io = require('socket.io')();
+var cors = require('cors');
 
 const desDate = new Date("2018-08-04T15:00:00").getTime();
 const orgDate = new Date("2018-07-06T02:00:00").getTime();
@@ -18,5 +20,6 @@ io.on('connection', (client) => {
 });
 
 const port = 8000;
+io.use(cors);
 io.listen(port);
 console.log('listening on port ', port);
