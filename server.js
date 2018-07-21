@@ -11,11 +11,11 @@ var server = http.createServer(app);
 
 const publicPath = path.join(__dirname, './build');
 
-/*
+
 app.get('/', (req,res) => {
     res.sendFile(publicPath + '/index.html');
 })
-*/
+
 
 const desDate = new Date("2018-08-04T15:00:00").getTime();
 const orgDate = new Date("2018-07-06T02:00:00").getTime();
