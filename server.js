@@ -44,6 +44,6 @@ io.on('connection', function(client){
     });
 });
 
-http.listen(8000, function(){
+http.listen(process.env.PORT, function(){
   console.log('listening on *:8000');
 });
