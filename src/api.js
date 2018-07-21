@@ -1,5 +1,5 @@
 import openSocket from 'socket.io-client';
-const  socket = openSocket('https://date-count-app.herokuapp.com/');
+const  socket = openSocket('');
 function subscribeToTimer(cb) {
   socket.on('timer', timestamp => cb(null, timestamp));
   socket.emit('subscribeToTimer', 1000);
