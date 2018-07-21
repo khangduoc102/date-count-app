@@ -1,5 +1,21 @@
-/*
+
 const io = require('socket.io')();
+
+const path = require('path');
+const http = require('http');
+const express= require('express');
+var cors = require('cors');
+
+var app = express();
+var server = http.createServer(app);
+
+const publicPath = path.join(__dirname, './build');
+
+/*
+app.get('/', (req,res) => {
+    res.sendFile(publicPath + '/index.html');
+})
+*/
 
 const desDate = new Date("2018-08-04T15:00:00").getTime();
 const orgDate = new Date("2018-07-06T02:00:00").getTime();
@@ -18,21 +34,39 @@ io.on('connection', (client) => {
     });
 });
 
-const port = 8000;
+
+
+const port = process.env.PORT || 8000;
 io.listen(port);
 console.log('listening on port ', port);
-*/
-var app = require('express')();
-var http = require('http').Server(app);
+
+/*
+const path = require('path');
+const http = require('http');
+const express= require('express');
+const socketIO = require('socket.io');
 var cors = require('cors');
-var io = require('socket.io')(http);
+
+var app = express();
+var server = http.createServer(app);
+var io= socketIO(server);
+
 
 const desDate = new Date("2018-08-04T15:00:00").getTime();
 const orgDate = new Date("2018-07-06T02:00:00").getTime();
 
 const totalTime = desDate - orgDate;
 
+const publicPath = path.join(__dirname, './build');
+
+const port = process.env.PORT || 8000;
 app.use(cors());
+app.use(express.static(publicPath));
+
+app.get('/', (req,res) => {
+    res.sendFile(publicPath + '/index.html');
+    res.sendStatus(500);
+})
 
 io.on('connection', function(client){
     console.log('a user connected');
@@ -44,6 +78,9 @@ io.on('connection', function(client){
     });
 });
 
-http.listen(process.env.PORT || 8000, function(){
-  console.log('listening on *:8000');
+console.log(process.env.PORT);
+
+app.listen(port, function(){
+  console.log('listening on *:' + port);
 });
+*/
