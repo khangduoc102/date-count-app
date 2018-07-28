@@ -1,4 +1,4 @@
-/*
+#!/usr/bin/env nodejs
 const io = require('socket.io')();
 
 const desDate = new Date("2018-08-04T15:00:00").getTime();
@@ -18,10 +18,11 @@ io.on('connection', (client) => {
     });
 });
 
-const port = 8000;
+const port = 3000;
 io.listen(port);
 console.log('listening on port ', port);
-*/
+
+/*
 var app = require('express')();
 var http = require('http').Server(app);
 var cors = require('cors');
@@ -44,6 +45,7 @@ io.on('connection', function(client){
     });
 });
 
-http.listen(8000, function(){
+http.listen(8080, function(){
   console.log('listening on *:8000');
 });
+*/
