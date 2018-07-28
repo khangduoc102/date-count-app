@@ -1,0 +1,18 @@
+[0;1;31m●[0m nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: [0;1;31mfailed[0m (Result: exit-code) since Wed 2018-07-18 12:05:20 UTC; 19s ago
+  Process: 25068 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 25357 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; [0;1;31m(code=exited, status=1/FAILURE)[0m
+  Process: 25354 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 23448 (code=exited, status=0/SUCCESS)
+
+Jul 18 12:05:17 ubuntu-first-vps nginx[25357]: nginx: [emerg] bind() to 0.0.0.0:8000 failed (98: Address already in use)
+Jul 18 12:05:18 ubuntu-first-vps nginx[25357]: nginx: [emerg] bind() to 0.0.0.0:8000 failed (98: Address already in use)
+Jul 18 12:05:18 ubuntu-first-vps nginx[25357]: nginx: [emerg] bind() to 0.0.0.0:8000 failed (98: Address already in use)
+Jul 18 12:05:19 ubuntu-first-vps nginx[25357]: nginx: [emerg] bind() to 0.0.0.0:8000 failed (98: Address already in use)
+Jul 18 12:05:19 ubuntu-first-vps nginx[25357]: nginx: [emerg] bind() to 0.0.0.0:8000 failed (98: Address already in use)
+Jul 18 12:05:20 ubuntu-first-vps nginx[25357]: nginx: [emerg] still could not bind()
+Jul 18 12:05:20 ubuntu-first-vps systemd[1]: [0;1;39mnginx.service: Control process exited, code=exited status=1[0m
+Jul 18 12:05:20 ubuntu-first-vps systemd[1]: [0;1;31mFailed to start A high performance web server and a reverse proxy server.[0m
+Jul 18 12:05:20 ubuntu-first-vps systemd[1]: [0;1;39mnginx.service: Unit entered failed state.[0m
+Jul 18 12:05:20 ubuntu-first-vps systemd[1]: [0;1;39mnginx.service: Failed with result 'exit-code'.[0m

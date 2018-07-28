@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "cors": "^2.8.4",
+<<<<<<< HEAD
     "express": "^4.16.3",
+=======
+>>>>>>> c4ef6e1dfc4a13e6112b3c0abf66aa6f07625e61
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",

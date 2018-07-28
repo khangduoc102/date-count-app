@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 
 const io = require('socket.io')();
+=======
+#!/usr/bin/env nodejs
+var io = require('socket.io')();
+var cors = require('cors');
+>>>>>>> c4ef6e1dfc4a13e6112b3c0abf66aa6f07625e61
 
 const path = require('path');
 const http = require('http');
@@ -34,6 +40,7 @@ io.on('connection', (client) => {
     });
 });
 
+<<<<<<< HEAD
 
 
 const port = process.env.PORT || 8000;
@@ -84,3 +91,9 @@ app.listen(port, function(){
   console.log('listening on *:' + port);
 });
 */
+=======
+const port = 8000;
+io.use(cors);
+io.listen(port);
+console.log('listening on port ', port);
+>>>>>>> c4ef6e1dfc4a13e6112b3c0abf66aa6f07625e61
